@@ -1,0 +1,11 @@
+{
+  "name": "vue_cli3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "mit",
+  "devDependencies": {
+    "@vue/cli": "^3.0.0",
+    "@vue/cli-init": "^3.0.0"
+  },
+  "dependencies": {}
+}
