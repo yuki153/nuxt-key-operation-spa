@@ -34,6 +34,7 @@ module.exports = {
         })
       }
     }
-  }
+  },
+  srcDir: ['static/','pages/'],
 }
 
