@@ -3,20 +3,16 @@
     <div>
       <app-logo/>
       <h1 class="title">
-        nuxt-test
+        Nuxt
       </h1>
       <h2 class="subtitle">
-        Nuxt.js project
+        Press the enter key to move
       </h2>
       <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+        <nuxt-link
+          to="/test01"
+          class="button--green"
+          tabindex='-1'>Go to test page</nuxt-link>
       </div>
     </div>
   </section>
@@ -28,6 +24,16 @@ import AppLogo from '~/components/AppLogo.vue'
 export default {
   components: {
     AppLogo
+  },
+  created() {
+    document.addEventListener('keydown', (e) => {
+      console.log(e.keyCode);
+      switch(e.keyCode) {
+        case 13: {
+          this.$router.push('test01');
+        }
+      }
+    });
   }
 }
 </script>

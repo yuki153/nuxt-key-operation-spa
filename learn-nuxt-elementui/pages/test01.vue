@@ -6,9 +6,11 @@
     <section class="contents">
       <ul class="contents__list">
           <contents-item
-          v-for="list in lists"
+          ref="ooooo"
+          v-for="list in response"
           :key="list.value"
-          v-bind:item="list"
+          v-bind:itemName="list.title"
+          v-bind:itemImg="list.img_src"
           >
           </contents-item>
           <!--<li class="test" v-for="list in lists" :key="list.value">{{list}}</li>-->
@@ -26,44 +28,47 @@ export default {
   },
   data() {
     return {
-      lists: ["hello1", "hello2", "hello3", "hello4"],
-      postUrl: 'http://localhost:3000/dummy_products_info.json',
+      response: [],
+      geturl: 'http://localhost:3333/products_info',
     };
   },
   created() {
-    //( async () => {
-    // const res = await this.post();
-    //  console.log(res);
-    //})();
-    console.log(this.post2());
+    ( async () => {
+    const res = await this.ajax();
+      console.log(res);
+      for (const value of res) {
+        this.response.push(value);
+      }
+    })();
+    /* test code 
+    const obj = {};
+    setTimeout(()=>{obj.data = "hello"}, 1000);
+    console.log(obj);
+    */
+  },
+  mounted() {
+    console.log(this.$refs);
+  },
+  updated() {
+    console.log(this.$refs.ooooo[0].$el);
+    this.$refs.ooooo[0].$el.focus();
   },
   methods: {
-    post() {
+    ajax() {
       const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
         xhr.withCredentials = true;
         xhr.onloadend = () => {
           if (xhr.status === 200) {
-            console.dir(xhr);
             const response = JSON.parse(xhr.responseText);
-            console.log(response);
             resolve(response);
           }
         };
-        console.log('sfgdxgdwge');
-        xhr.open('GET', this.postUrl);
+        xhr.open('GET', this.geturl);
         xhr.responseType = "text";
         xhr.send(null);
       });
       return promise;
-    },
-     post2() {
-      fetch(this.postUrl, {
-        method: 'POST',
-      })
-      .then(response => {
-        return response.text();
-      })
     }
   }
 };
@@ -75,7 +80,7 @@ export default {
     &__header {
       display: block;
       width: 100%;
-      height: 200px;
+      height: 150px;
       background-color: rgb(46, 102, 255);
     }
     &__title {
