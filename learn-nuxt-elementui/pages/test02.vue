@@ -1,65 +1,62 @@
 <template>
-  <section class="container">
-    <div>
-      <app-logo/>
-      <h1 class="title">
-        nuxt-test
-      </h1>
-      <h2 class="subtitle">
-        Nuxt.js project
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green">Documentation</a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey">GitHub</a>
+  <div class="detail">
+    <header class="detail__header">
+      <h1 class="detail__title">作品詳細</h1>
+    </header>
+    <section class="detail__section">
+      <div class="detail__productInfo">
+        <h1>{{ product.name }}</h1>
+        <img v-bind:src="product.img">
       </div>
-    </div>
-  </section>
+      <nuxt-link to="/test01" class="detail__back">戻る</nuxt-link>
+    </section>
+  </div>
 </template>
 
 <script>
-import AppLogo from '~/components/AppLogo.vue'
+import ContentsItem from "~/components/ContentsItem.vue";
 
 export default {
   components: {
-    AppLogo
+    ContentsItem
+  },
+  data() {
+    return {
+      product: this.$store.state.product,
+    };
+  },
+  created() {
+  },
+  methods: {
   }
-}
+};
+
 </script>
 
-<style>
-.container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style scoped lang="scss">
+  .detail {
+    &__header {
+      display: block;
+      width: 100%;
+      height: 150px;
+      background-color: rgb(46, 102, 255);
+    }
+    &__title {
+      color: #fff;
+      font-size: 50px;
+    }
+    &__back {
+      display: block;
+      width: 200px;
+      height: 50px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      line-height: 50px;
+      &:hover {
+        opacity: .7;
+      }
+    }
+  }
 </style>
 
