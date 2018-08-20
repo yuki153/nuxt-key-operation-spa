@@ -21,6 +21,13 @@ html {
   margin: 0;
 }
 
+li:focus,
+div:focus,
+a:focus {
+  outline: none;
+  border: 3px solid rgb(46, 102, 255);
+}
+
 a{
   text-decoration: none;
 }
