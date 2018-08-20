@@ -6,7 +6,7 @@
     <section class="contents">
       <ul class="contents__list">
           <contents-item
-          ref="ooooo"
+          ref="item"
           v-for="list in response"
           :key="list.value"
           v-bind:itemName="list.title"
@@ -30,6 +30,7 @@ export default {
     return {
       response: [],
       geturl: 'http://localhost:3333/products_info',
+      index: 0,
     };
   },
   created() {
@@ -45,13 +46,14 @@ export default {
     setTimeout(()=>{obj.data = "hello"}, 1000);
     console.log(obj);
     */
+    // document.addEventListener('keydown', this.keydownHandler);
   },
   mounted() {
-    console.log(this.$refs);
+    this.$el.addEventListener('keydown', this.keydownHandler);
   },
   updated() {
-    console.log(this.$refs.ooooo[0].$el);
-    this.$refs.ooooo[0].$el.focus();
+    console.log(this.$refs.item[0].$el);
+    this.$refs.item[this.index].$el.focus();
   },
   methods: {
     ajax() {
@@ -69,6 +71,31 @@ export default {
         xhr.send(null);
       });
       return promise;
+    },
+    target (index) {
+      return this.$refs.item[index].$el;
+    },
+    keydownHandler(e) {
+      switch(e.keyCode) {
+        case 13: // enter
+          this.target(this.index).firstElementChild.click();
+          break;
+        case 39: // right
+          if (this.$refs.item[this.index + 1]) {
+            this.index += 1;
+            this.target(this.index).focus();
+          }
+          break;
+        case 37: // left
+          if (this.$refs.item[this.index - 1]) {
+            this.index -= 1;
+            this.target(this.index).focus();
+          }
+          break;
+        default:
+          console.log(e.keyCode);
+          break;
+      }
     }
   }
 };
