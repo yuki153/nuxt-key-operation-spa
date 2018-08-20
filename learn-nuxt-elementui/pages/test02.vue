@@ -26,8 +26,20 @@ export default {
     };
   },
   created() {
+    // BAD this.$el
+    // OK  document
+  },
+  mounted() {
+    this.$el.addEventListener('keydown', this.keydownHandler);
+    this.$el.querySelector('.detail__back').focus();
   },
   methods: {
+    keydownHandler(e) {
+      switch(e.keyCode) {
+        default:
+          break;
+      }
+    }
   }
 };
 
