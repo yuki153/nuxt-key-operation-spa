@@ -1,4 +1,7 @@
 module.exports = {
+  router: {
+    base: '/nuxt_app/'
+  },
   /*
   ** Headers of the page
   */
@@ -35,6 +38,6 @@ module.exports = {
       }
     }
   },
-  srcDir: ['static/','pages/'],
+  // srcDir: ['static/','pages/'],
 }
 
