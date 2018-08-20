@@ -43,10 +43,6 @@ export default {
     background-color: #333;
     box-sizing: border-box;
   }
-  li:focus {
-     border: 2px solid rgb(46, 102, 255);
-     outline: none;
-  }
   li:hover {
     opacity: .7;
   }
