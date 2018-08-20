@@ -56,6 +56,7 @@ export default {
     &__title {
       color: #fff;
       font-size: 50px;
+      font-weight: normal;
     }
     &__back {
       display: block;
