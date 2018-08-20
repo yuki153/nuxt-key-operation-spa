@@ -1,5 +1,5 @@
 <template>
-  <section class="container">
+  <section tabindex="-1" class="container">
     <div>
       <app-logo/>
       <h1 class="title">
@@ -10,6 +10,7 @@
       </h2>
       <div class="links">
         <nuxt-link
+          ref="button"
           to="/test01"
           class="button--green"
           tabindex='-1'>Go to test page</nuxt-link>
@@ -26,7 +27,11 @@ export default {
     AppLogo
   },
   created() {
-    document.addEventListener('keydown', (e) => {
+  },
+  mounted() {
+    console.log(this.$refs.button);
+    this.$refs.button.$el.focus();
+    this.$refs.button.$el.addEventListener('keydown', (e) => {
       console.log(e.keyCode);
       switch(e.keyCode) {
         case 13: {
