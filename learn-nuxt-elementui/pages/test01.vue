@@ -2,6 +2,7 @@
   <div class="gallery">
     <header class="gallery__header">
       <h1 class="gallery__title">作品一覧</h1>
+      <p class="gallery__description">※左右の矢印キーで選択可能です。エンターキーで決定となります。</p>
     </header>
     <section class="contents">
       <ul class="contents__list">
@@ -120,6 +121,9 @@ export default {
       color: #fff;
       font-size: 50px;
       font-weight: normal;
+    }
+    &__description {
+      color: #fff;
     }
   }
 </style>
