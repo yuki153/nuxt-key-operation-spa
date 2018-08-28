@@ -2,6 +2,7 @@
   <div class="detail">
     <header class="detail__header">
       <h1 class="detail__title">作品詳細</h1>
+      <p class="detail__description">※左右の矢印キーで選択可能です。エンターキーで決定となります。</p>
     </header>
     <section class="detail__section">
       <div class="detail__productInfo">
@@ -57,6 +58,9 @@ export default {
       color: #fff;
       font-size: 50px;
       font-weight: normal;
+    }
+    &__description {
+      color: #fff;
     }
     &__back {
       display: block;
