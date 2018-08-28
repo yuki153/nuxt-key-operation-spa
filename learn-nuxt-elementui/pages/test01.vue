@@ -2,6 +2,7 @@
   <div class="gallery">
     <header class="gallery__header">
       <h1 class="gallery__title">作品一覧</h1>
+      <p class="gallery__description">※左右の矢印キーで選択可能です。エンターキーで決定となります。</p>
     </header>
     <section class="contents">
       <ul class="contents__list">
@@ -9,11 +10,11 @@
           ref="item"
           v-for="list in response"
           :key="list.value"
+          v-bind:display="list.flag = list.flag === undefined"
           v-bind:itemName="list.title"
           v-bind:itemImg="list.img_src"
           >
           </contents-item>
-          <!--<li class="test" v-for="list in lists" :key="list.value">{{list}}</li>-->
       </ul>
     </section>
   </div>
@@ -29,7 +30,7 @@ export default {
   data() {
     return {
       response: [],
-      geturl: 'http://localhost:3333/products_info',
+      geturl: 'https://tests-yuki-gifjp.ssl-netowl.jp/json/dummy_data.json',
       index: 0,
     };
   },
@@ -37,9 +38,15 @@ export default {
     ( async () => {
     const res = await this.ajax();
       console.log(res);
-      for (const value of res) {
+      for (const value of res.products_info) {
         this.response.push(value);
       }
+      const obj = {
+        title: "Go to Nuxt top",
+        img_src: '',
+        flag: false,
+      }
+      this.response.push(obj)
     })();
     /* test code 
     const obj = {};
@@ -59,7 +66,7 @@ export default {
     ajax() {
       const promise = new Promise((resolve, reject) => {
         const xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
+        // xhr.withCredentials = true;
         xhr.onloadend = () => {
           if (xhr.status === 200) {
             const response = JSON.parse(xhr.responseText);
@@ -113,6 +120,10 @@ export default {
     &__title {
       color: #fff;
       font-size: 50px;
+      font-weight: normal;
+    }
+    &__description {
+      color: #fff;
     }
   }
 </style>

@@ -1,9 +1,16 @@
 <template>
     <li tabindex="-1">
-      <nuxt-link to="/test02" v-on:click.native="updateProduct()">
+      <nuxt-link
+      to="/test02"
+      v-if="display"
+      v-on:click.native="updateProduct()"
+      >
         <div class="imgWrap">
           <img v-bind:src="itemImg" alt="">
         </div>
+        <p>{{ itemName }}</p>
+      </nuxt-link>
+      <nuxt-link class="toTop" to="/" v-else>
         <p>{{ itemName }}</p>
       </nuxt-link>
     </li>
@@ -11,7 +18,7 @@
 
 <script>
 export default {
-  props: ['itemName', 'itemImg'],
+  props: ['itemName', 'itemImg', 'display'],
   created() {
     console.log('ContentsItem_hello');
   },
@@ -38,7 +45,6 @@ export default {
     flex-flow: column nowrap;
     width: 200px;
     height: 300px;
-    padding-top: 40px;
     margin: 10px 10px 0 0;
     background-color: #333;
     box-sizing: border-box;
@@ -50,12 +56,24 @@ export default {
     width: 200px;
     height: 200px;
     text-align: center;
+    margin-top: 40px;
   }
   img {
     height: 90%;
   }
   p {
     color: #fff;
+    text-align: center;
+  }
+  .toTop {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+  }
+  .toTop p {
+    display: inline-block;
   }
 </style>
 
