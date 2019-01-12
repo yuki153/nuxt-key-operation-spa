@@ -30,7 +30,7 @@ export default {
   data() {
     return {
       response: [],
-      geturl: 'https://tests-yuki-gifjp.ssl-netowl.jp/json/dummy_data.json',
+      geturl: 'http://localhost:3333/products_info',
       index: 0,
     };
   },
@@ -38,7 +38,7 @@ export default {
     ( async () => {
     const res = await this.ajax();
       console.log(res);
-      for (const value of res.products_info) {
+      for (const value of res) {
         this.response.push(value);
       }
       const obj = {
