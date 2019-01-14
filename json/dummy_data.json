@@ -1,53 +1,53 @@
 {
-  "products_info": [
+  "product_list": [
     {
       "id": 0,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/01.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-01.png",
       "title": "湯切りをする人"
     },
     {
       "id": 1,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/02.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-02.png",
       "title": "サッカー少年"
     },
     {
       "id": 2,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/03.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-03.png",
       "title": "サッカー少女"
     },
     {
       "id": 3,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/04.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-04.png",
       "title": "布団が恋人（男）"
     },
     {
       "id": 4,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/05.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-05.png",
       "title": "布団が恋人（女）"
     },
     {
       "id": 5,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/06.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-06.png",
       "title": "燃える社会人"
     },
     {
       "id": 6,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/07.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-07.png",
       "title": "穴を掘る人"
     },
     {
       "id": 7,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/08.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-08.png",
       "title": "演説する人"
     },
     {
       "id": 8,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/09.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-09.png",
       "title": "謎のキャラクター"
     },
     {
       "id": 9,
-      "img_src": "https://tests-yuki-gifjp.ssl-netowl.jp/image/10.png",
+      "img_src": "http://localhost:3000/nuxt-key-operation/irasutoya-10.png",
       "title": "悲しい社会人"
     }
   ]
