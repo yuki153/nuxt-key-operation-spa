@@ -1,6 +1,8 @@
-# nuxt-test
+# nuxt-key-operation-spa-page
 
-> Nuxt.js project
+## 概要
+
+キー操作（←, →）によるフォーカス移動と Enter key での決定でページ遷移する Nuxt.js 使用したテスト SPA ページ。
 
 ## Build Setup
 
