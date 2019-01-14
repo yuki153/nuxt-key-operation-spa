@@ -1,6 +1,7 @@
 module.exports = {
+  // mode: 'spa',
   router: {
-    base: '/nuxt_app/'
+    base: '/nuxt-key-operation/'
   },
   /*
   ** Headers of the page
