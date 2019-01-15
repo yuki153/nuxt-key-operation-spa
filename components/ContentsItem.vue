@@ -20,7 +20,6 @@
 export default {
   props: ['itemName', 'itemImg', 'display'],
   created() {
-    console.log('ContentsItem_hello');
   },
   methods: {
     updateProduct() {
