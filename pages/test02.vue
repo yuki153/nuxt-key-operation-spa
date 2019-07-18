@@ -15,12 +15,8 @@
 </template>
 
 <script>
-import ContentsItem from "~/components/ContentsItem.vue";
 
 export default {
-  components: {
-    ContentsItem
-  },
   data() {
     return {
       product: this.$store.state.product,
